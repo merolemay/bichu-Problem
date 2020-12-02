@@ -1,21 +1,27 @@
 package model;
 
-import graphs.Graph;
+import graphs.AdjListGraph;
 
 public class Map {
 	
-	private Graph<Integer> map;
+	private AdjListGraph<Integer> map1;
 	
 	public Map() {
-		map = new Graph<Integer>();
+		map1 = new AdjListGraph<Integer>(false,false);
 	}
 
-	public void addCountry(int value,double x,double y) {
-		map.newVertex(value, x, y);
+	public void addCountry(int v) {
+		map1.addVertex(v);
 	}
 	
-	public void addRoad(int a,int b) {
-		map.newEdge(a, b, 1.0);
+	public void addRoad(int u,int v) {
+		if(!map1.isInGraph(u)) {
+			addCountry(u);
+		}
+		if(!map1.isInGraph(v)) {
+			addCountry(v);
+		}
+		
 	}
 	
 	
