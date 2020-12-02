@@ -1,5 +1,7 @@
 package graphs;
 
+import model.Person;
+
 public class Vertex<T> implements Comparable<Vertex<T>>{
 
 	public static final int WHITE = 0;
@@ -24,10 +26,34 @@ public class Vertex<T> implements Comparable<Vertex<T>>{
 	
 	private Vertex<T> pred;
 	
+	private int distance;
+	
+	private boolean visited;
+	
+	private Person girl=null;
+	
 	public Vertex(T value) {
 		this.value=value;
 		pred=null;
 		color=WHITE;
+		visited = false;
+	}
+	
+	public boolean getVisited() {
+		return visited;
+	}
+	
+	public void setVisited(boolean t) {
+		visited=t;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void addPerson() {
+		girl = new Person((Vertex<Integer>) this);
+	}
+	
+	public Person getPerson() {
+		return girl;
 	}
 
 	public T getValue() {

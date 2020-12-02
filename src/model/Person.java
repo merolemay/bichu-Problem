@@ -1,24 +1,27 @@
 package model;
 
+import graphs.Vertex;
+
 public class Person {
 
-	public Country c;
+	private Vertex<Integer> c;
+
 	
-	public Person (Country country) {
+	public Person (Vertex<Integer> country) {
 		c=country;
 	}
 
 	/**
 	 * @return the c
 	 */
-	public Country getC() {
+	public Vertex<Integer> getC() {
 		return c;
 	}
 
 	/**
 	 * @param c the c to set
 	 */
-	public void setC(Country c) {
+	public void setC(Vertex<Integer> c) {
 		this.c = c;
 	}
 	

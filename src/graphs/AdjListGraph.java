@@ -203,6 +203,9 @@ public class AdjListGraph<T> implements IGraph<T> {
 		return index;
 	}
 
+	//Alex try bfs
+	
+	
 	public void bfs(Vertex<T> x) {
 		AdjVertex<T> s = (AdjVertex<T>) x;
 		for (Vertex<T> u : vertices) {
@@ -230,7 +233,7 @@ public class AdjListGraph<T> implements IGraph<T> {
 		}
 	}
 
-	public void dfs() {
+	/*public void dfs() {
 		for (Vertex<T> u : vertices) {
 			u.setColor(Vertex.WHITE);
 			u.setPred(null);
@@ -240,6 +243,29 @@ public class AdjListGraph<T> implements IGraph<T> {
 			if (u.getColor() == Vertex.WHITE)
 				time = dfsVisit((AdjVertex<T>) u, time);
 		}
+	}
+	*/
+	
+	
+	
+	
+	public int dfs(boolean[] visited,int src,int dest,int curr) {
+		
+		visited[src]=true;
+		if(src==dest)
+			return curr;
+		for(int i;i<vertices.get(1).getValue();i++)
+		{
+			if(i==dest)
+			{
+					return curr;
+			}
+			if(!visited[i])
+			{
+				dfs(visited,i,dest,curr+1);	x
+			}
+		}
+	  return curr;
 	}
 
 	private int dfsVisit(AdjVertex<T> u, int time) {
