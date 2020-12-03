@@ -4,26 +4,18 @@ import graphs.Vertex;
 
 public class Person {
 
-	private Vertex<Integer> c;
+	private int value;
 
 	
-	public Person (Vertex<Integer> country) {
-		c=country;
+	public Person (int value) {
+		this.value=value;
 	}
 
-	/**
-	 * @return the c
-	 */
-	public Vertex<Integer> getC() {
-		return c;
-	}
-
-	/**
-	 * @param c the c to set
-	 */
-	public void setC(Vertex<Integer> c) {
-		this.c = c;
+	public int getValue() {
+		return value;
 	}
 	
-	
+	public void setValue(int value) {
+		this.value = value;
+	}
 }

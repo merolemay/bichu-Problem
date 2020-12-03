@@ -15,6 +15,7 @@ public class AdjListGraph<T> implements IGraph<T> {
 	private boolean weighted;
 	private int numberOfVertices;
 	private int numberOfEdges;
+	ArrayList<Integer> dist ;
 
 	private List<Vertex<T>> vertices;
 	private HashMap<T, AdjVertex<T>> map;
@@ -26,6 +27,7 @@ public class AdjListGraph<T> implements IGraph<T> {
 		numberOfEdges = 0;
 		vertices = new LinkedList<Vertex<T>>();
 		map = new HashMap<>();
+		 dist = new ArrayList<>();
 	}
 
 	public List<Vertex<T>> getVertices() {
@@ -203,7 +205,7 @@ public class AdjListGraph<T> implements IGraph<T> {
 		return index;
 	}
 
-	//Alex try bfs
+	
 	
 	
 	public void bfs(Vertex<T> x) {
@@ -233,57 +235,42 @@ public class AdjListGraph<T> implements IGraph<T> {
 		}
 	}
 
-	/*public void dfs() {
+	public int dfs() {
+		
 		for (Vertex<T> u : vertices) {
 			u.setColor(Vertex.WHITE);
 			u.setPred(null);
 		}
-		int time = 0;
+		
 		for (Vertex<T> u : vertices) {
+			int time = 0;
+		
 			if (u.getColor() == Vertex.WHITE)
 				time = dfsVisit((AdjVertex<T>) u, time);
 		}
+		return closestW();
 	}
-	*/
 	
-	
-	
-	
-	public int dfs(boolean[] visited,int src,int dest,int curr) {
-		
-		visited[src]=true;
-		if(src==dest)
-			return curr;
-		for(int i;i<vertices.get(1).getValue();i++)
-		{
-			if(i==dest)
-			{
-					return curr;
-			}
-			if(!visited[i])
-			{
-				dfs(visited,i,dest,curr+1);	x
-			}
-		}
-	  return curr;
-	}
 
 	private int dfsVisit(AdjVertex<T> u, int time) {
 		time++;
 		u.setD(time);
 		u.setColor(Vertex.GRAY);
 		for (int i = 0; i < u.getAdjList().size(); i++) {
+			
 			AdjVertex<T> v = (AdjVertex<T>) u.getAdjList().get(i).getDestination();
 			if (v.getColor() == Vertex.WHITE) {
 				v.setPred(u);
 				time = dfsVisit(v, time);
+				
 			}
 		}
 		u.setColor(Vertex.BLACK);
-		time++;
+		time=0;
 		u.setF(time);
 		return time;
 	}
+
 
 	private void initSingleSource(AdjVertex<T> s) {
 		for (Vertex<T> u : vertices) {
@@ -436,5 +423,16 @@ public class AdjListGraph<T> implements IGraph<T> {
 			contents.add(vertices.get(i).getValue());
 		}
 		return contents;
+	}
+	
+	public int closestW() {
+		int min= 999999;
+		for (Vertex<T> u : vertices) {
+			if(u.hasAprincess()){
+				min =(u.getPerson().getValue()<min)?u.getPerson().getValue():min;
+			}
+		}
+		
+		return  min;
 	}
 }

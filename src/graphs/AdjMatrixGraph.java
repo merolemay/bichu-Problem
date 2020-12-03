@@ -225,7 +225,7 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 		}
 	}
 
-	public void dfs() {
+	public int dfs() {
 		for (Vertex<T> u : vertices) {
 			u.setColor(Vertex.WHITE);
 			u.setPred(null);
@@ -235,6 +235,7 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 			if (u.getColor() == Vertex.WHITE)
 				time = dfsVisit(u, time);
 		}
+		return closestW();
 	}
 
 	private int dfsVisit(Vertex<T> u, int time) {
@@ -394,6 +395,17 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 
 	public void setMarked(boolean[][] marked) {
 		this.marked = marked;
+	}
+	
+	public int closestW() {
+		int min= 999999;
+		for (Vertex<T> u : vertices) {
+			if(u.hasAprincess()){
+				min =(u.getPerson().getValue()<min)?u.getPerson().getValue():min;
+			}
+		}
+		
+		return  min;
 	}
 
 }

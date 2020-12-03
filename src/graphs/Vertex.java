@@ -39,6 +39,9 @@ public class Vertex<T> implements Comparable<Vertex<T>>{
 		visited = false;
 	}
 	
+	public boolean hasAprincess() {
+		return girl!=null;
+	}
 	public boolean getVisited() {
 		return visited;
 	}
@@ -47,9 +50,8 @@ public class Vertex<T> implements Comparable<Vertex<T>>{
 		visited=t;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public void addPerson() {
-		girl = new Person((Vertex<Integer>) this);
+	public void addPerson(int n) {
+		girl = new Person(n);
 	}
 	
 	public Person getPerson() {
