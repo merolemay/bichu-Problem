@@ -1,6 +1,6 @@
 package model;
 
-import graphs.Vertex;
+
 
 public class Person {
 

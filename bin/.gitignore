@@ -1,0 +1,11 @@
+/application/
+/graphs/
+/listaDFS$AdjListGraph.class
+/listaDFS$AdjVertex.class
+/listaDFS$Edge$UnionFind.class
+/listaDFS$Edge.class
+/listaDFS$Person.class
+/listaDFS$Vertex.class
+/listaDFS.class
+/matrixBFS.class
+/model/

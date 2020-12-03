@@ -25,8 +25,7 @@ public class Vertex<T> implements Comparable<Vertex<T>>{
 	private int color;
 	
 	private Vertex<T> pred;
-	
-	private int distance;
+
 	
 	private boolean visited;
 	

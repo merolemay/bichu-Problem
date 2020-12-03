@@ -19,8 +19,8 @@
                   <Text layoutX="21.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provide to bishu, the info to get a girlfriend: " />
                   <Text layoutX="336.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="God that will help us to find his girlfriend" />
                   <Line endX="-100.0" endY="265.0" layoutX="400.0" layoutY="58.0" startX="-100.0" startY="-26.0" />
-                  <Button layoutX="347.0" layoutY="114.0" mnemonicParsing="false" onAction="#dfsButton" text="Cupid" />
-                  <Button layoutX="336.0" layoutY="213.0" mnemonicParsing="false" onAction="#bfsButton" text="Aphrodite" />
+                  <Button fx:id="dfsBtn" disable="true" layoutX="347.0" layoutY="114.0" mnemonicParsing="false" onAction="#dfsBtnAction" text="Cupid" />
+                  <Button fx:id="bfsBtn" disable="true" layoutX="336.0" layoutY="213.0" mnemonicParsing="false" onAction="#bfsBtnAction" text="Aphrodite" />
                   <ImageView fitHeight="116.0" fitWidth="133.0" layoutX="455.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Doc/img/Aphrodite.jpg" />
@@ -45,8 +45,8 @@
                         <Font size="96.0" />
                      </font>
                   </Text>
-                  <Text layoutX="177.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congrats for your new relationship" />
-                  <Button layoutX="274.0" layoutY="243.0" mnemonicParsing="false" text="Back" />
+                  <Text layoutX="122.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congrats for your new relationship Bishu :3 and his new girlfriend" />
+                  <Button layoutX="274.0" layoutY="243.0" mnemonicParsing="false" onAction="#backToInfo" text="Back" />
                   <ImageView fitHeight="103.0" fitWidth="127.0" layoutX="457.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Doc/img/Fiesa.png" />
