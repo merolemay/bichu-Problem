@@ -254,7 +254,7 @@ public class AdjListGraph<T> implements IGraph<T> {
 
 	private int dfsVisit(AdjVertex<T> u, int time) {
 		time++;
-		u.setD(time);
+		u.setD(time-1);
 		u.setColor(Vertex.GRAY);
 		for (int i = 0; i < u.getAdjList().size(); i++) {
 			
@@ -429,7 +429,12 @@ public class AdjListGraph<T> implements IGraph<T> {
 		int min= 999999;
 		for (Vertex<T> u : vertices) {
 			if(u.hasAprincess()){
-				min =(u.getPerson().getValue()<min)?u.getPerson().getValue():min;
+				if(u.getD()<min ) {
+					min = (int)u.getValue();
+					
+					
+				}
+				
 			}
 		}
 		
