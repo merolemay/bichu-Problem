@@ -199,10 +199,6 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 	}
 
 	public void bfs(Vertex<T> s) {
-		
-		
-		
-		
 		for (Vertex<T> u : vertices) {
 			u.setColor(Vertex.WHITE);
 			u.setD(INF);
@@ -213,21 +209,19 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 		s.setPred(null);
 		Queue<Vertex<T>> q = new LinkedList<>();
 		q.offer(s);
-	
 		while (!q.isEmpty()) {
 			Vertex<T> u = q.poll();
 			List<Vertex<T>> neigh = getNeighbors(u);
 			for (int i = 0; i < neigh.size(); i++) {
 				Vertex<T> v = neigh.get(i);
 				if (v.getColor() == Vertex.WHITE) {
-					v.setColor(Vertex.GRAY);	
+					v.setColor(Vertex.GRAY);
 					v.setD(u.getD() + 1);
 					v.setPred(u);
 					q.offer(v);
 				}
 			}
 			u.setColor(Vertex.BLACK);
-			
 		}
 	}
 
@@ -407,12 +401,7 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 		int min= 999999;
 		for (Vertex<T> u : vertices) {
 			if(u.hasAprincess()){
-				if(u.getD()<min ) {
-					min = (int)u.getValue();
-					
-					
-				}
-				
+				min =(u.getPerson().getValue()<min)?u.getPerson().getValue():min;
 			}
 		}
 		

@@ -84,7 +84,6 @@ public class bishuGUI {
 			b.searchVertex(country).addPerson(country);
 		}
 		b.bfs(b.searchVertex(1));
-		
 		girlNumberAnswer.setText(b.closestW()+"");
 		br.close();
 		
