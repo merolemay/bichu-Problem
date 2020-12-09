@@ -22,7 +22,7 @@ public class BishuAdjMatrixGraph {
 	
 	
 	public static void main(String args[]) {
-		BishuAdjListGraph m = new BishuAdjListGraph();
+	     BishuAdjMatrixGraph m = new BishuAdjMatrixGraph();
 		try {
 			m.exe();
 		} catch (NumberFormatException e) {
@@ -54,6 +54,7 @@ public class BishuAdjMatrixGraph {
 			int country = Integer.parseInt(br.readLine());
 			a.searchVertex(country).addPerson(country);
 		}
+		
 		a.bfs(a.searchVertex(1));
 		System.out.println(a.closestW());
 		br.close();
